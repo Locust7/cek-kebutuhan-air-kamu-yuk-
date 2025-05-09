@@ -1,4 +1,7 @@
 import streamlit as st
+import requests
+from streamlit_lottie import st_lottie
+
 # Konfigurasi halaman
 st.set_page_config(page_title="🐧 Kalkulator Minum Air Harian Lucu", layout="centered")
 
@@ -121,3 +124,4 @@ if st.button("🧃 Hitung Berapa Kamu Harus Minum Hari Ini!"):
 # FOOTER lucu
 st.markdown("---")
 st.markdown("<p style='text-align: center; color: grey;'>🐬 Dibuat oleh tim <b>LPK 7 Daviona😊, Ifta😍, Nadila🤡, Vania😡, Sulthan🥸</b> yang haus ide & air 💡💧</p>", unsafe_allow_html=True)
+
