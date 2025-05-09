@@ -1,19 +1,7 @@
 import streamlit as st
-import requests
-from streamlit_lottie import st_lottie
 
 # Konfigurasi halaman
 st.set_page_config(page_title="🐧 Kalkulator Minum Air Harian Lucu", layout="centered")
-
-# Fungsi untuk ambil animasi Lottie
-def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-
-# Animasi Lottie
-lottie_water = load_lottieurl("https://lottie.host/87bafc33-681f-42fa-8d0e-1b95f25e758f/PRmavlvoPQ.json")
 
 # Background dengan gambar air minum segar
 st.markdown(
@@ -45,12 +33,6 @@ st.markdown(
 # HEADER lucu
 st.markdown("<h1 style='text-align: center; color: #00CFFF;'>🐧💦 Berapa Banyak Air yang Harus Kamu Minum Hari Ini?</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; font-size: 18px;'>Biar nggak jadi kaktus kering, yuk hitung kebutuhan air kamu hari ini! 🌵➡💧</p>", unsafe_allow_html=True)
-
-# Animasi lucu
-if lottie_water:
-    st_lottie(lottie_water, height=200)
-else:
-    st.info("⚠️ Animasi tidak berhasil dimuat.")
 
 # FORM input
 st.markdown("<div class='highlight-box'><b>🥤 Isi dulu datanya yaa, biar tahu kamu butuh berapa galon! 😄</b></div>", unsafe_allow_html=True)
@@ -122,8 +104,4 @@ if st.button("🧃 Hitung Berapa Kamu Harus Minum Hari Ini!"):
 st.markdown("---")
 st.markdown("<p style='text-align: center; color: grey;'>🐬 Dibuat oleh tim <b>LPK 7 Daviona😊, Ifta😍, Nadila🤡, Vania😡, Sulthan🥸</b> yang haus ide & air 💡💧</p>", unsafe_allow_html=True)
 
-
-# FOOTER lucu
-st.markdown("---")
-st.markdown("<p style='text-align: center; color: grey;'>🐬 Dibuat oleh tim <b>LPK 7 Daviona😊, Ifta😍, Nadila🤡, Vania😡, Sulthan🥸</b> yang haus ide & air 💡💧</p>", unsafe_allow_html=True)
 
