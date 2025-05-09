@@ -12,7 +12,8 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
-lottie_water = load_lottieurl("https://lottie.host/87bafc33-681f-42fa-8d0e-1b95f25e758f/PRmavlvoPQ.json")  # animasi minum air
+# Animasi Lottie
+lottie_water = load_lottieurl("https://lottie.host/87bafc33-681f-42fa-8d0e-1b95f25e758f/PRmavlvoPQ.json")
 
 # Background dengan gambar air minum segar
 st.markdown(
@@ -29,6 +30,13 @@ st.markdown(
         padding: 2rem;
         border-radius: 15px;
     }
+    .highlight-box {
+        background-color: #31adff;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #add8e6;
+        margin-bottom: 15px;
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -41,19 +49,8 @@ st.markdown("<p style='text-align: center; font-size: 18px;'>Biar nggak jadi kak
 # Animasi lucu
 if lottie_water:
     st_lottie(lottie_water, height=200)
-
-# Gaya tambahan
-st.markdown("""
-<style>
-    .highlight-box {
-        background-color: #31adff;
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid #add8e6;
-        margin-bottom: 15px;
-    }
-</style>
-""", unsafe_allow_html=True)
+else:
+    st.info("⚠️ Animasi tidak berhasil dimuat.")
 
 # FORM input
 st.markdown("<div class='highlight-box'><b>🥤 Isi dulu datanya yaa, biar tahu kamu butuh berapa galon! 😄</b></div>", unsafe_allow_html=True)
@@ -120,6 +117,11 @@ if st.button("🧃 Hitung Berapa Kamu Harus Minum Hari Ini!"):
         """, unsafe_allow_html=True)
     else:
         st.warning("⚠ Masukkan berat badan yang valid dulu yaa jangan bohongg~")
+
+# FOOTER lucu
+st.markdown("---")
+st.markdown("<p style='text-align: center; color: grey;'>🐬 Dibuat oleh tim <b>LPK 7 Daviona😊, Ifta😍, Nadila🤡, Vania😡, Sulthan🥸</b> yang haus ide & air 💡💧</p>", unsafe_allow_html=True)
+
 
 # FOOTER lucu
 st.markdown("---")
